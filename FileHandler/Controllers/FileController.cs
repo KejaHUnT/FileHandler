@@ -1,6 +1,4 @@
-﻿using FileHandler.Models.Dtos;
-using FileHandler.Services;
-using Microsoft.AspNetCore.Http;
+﻿using FileHandler.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FileHandler.Controllers
