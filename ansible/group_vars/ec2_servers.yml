@@ -11,4 +11,4 @@ aspnet_environment: "Production"
 # Environment variables for your app
 app_env_vars:
 #  ConnectionStrings__DefaultConnection: "Host=34.74.244.105;Database=PropertyDb;Username=postgres;Password=KejaHUnT@2217;Port=5432;"
-   ConnectionStrings__DefaultConnection: "Host=0.tcp.in.ngrok.io;Database=FileHandlerDb;Username=postgres;Password=0383fbcd4@K;Port=11895;"
+   ConnectionStrings__DefaultConnection: "Host=0.tcp.in.ngrok.io;Database=FileHandlerDb;Username=postgres;Password=083fbcd4@K;Port=11895;"
