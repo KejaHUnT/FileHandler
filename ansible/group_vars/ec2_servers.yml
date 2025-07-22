@@ -1,0 +1,14 @@
+# group_vars/ec2_servers.yml
+app_name: "FileHandler"
+app_user: "www-data"
+app_group: "www-data"
+app_directory: "/var/www/your-app"
+app_executable: "FileHandler"  # Your .NET executable name
+app_port: "5000"
+dotnet_version: "8.0"
+aspnet_environment: "Production"
+
+# Environment variables for your app
+app_env_vars:
+#  ConnectionStrings__DefaultConnection: "Host=34.74.244.105;Database=PropertyDb;Username=postgres;Password=KejaHUnT@2217;Port=5432;"
+   ConnectionStrings__DefaultConnection: "Host=0.tcp.in.ngrok.io;Database=FileHandlerDb;Username=postgres;Password=083fbcd4@K;Port=11895;"
