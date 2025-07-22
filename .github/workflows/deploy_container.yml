@@ -28,7 +28,7 @@ jobs:
           file: ./Dockerfile
           target: runtime
           push: true
-          tags: kalukwo/kejahunt-propertyservice:latest
+          tags: kalukwo/kejahunt-filehandler:latest
 
       - name: Build and Push Migration Image
         uses: docker/build-push-action@v5
@@ -37,7 +37,7 @@ jobs:
           file: ./Dockerfile
           target: migrations
           push: true
-          tags: kalukwo/kejahunt-propertyservice:migrations
+          tags: kalukwo/kejahunt-filehandler:migrations
 
   trigger-remote:
     name: Trigger Remote Deployment
