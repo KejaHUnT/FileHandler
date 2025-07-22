@@ -1,0 +1,14 @@
+# group_vars/ec2_servers.yml
+app_name: "PropertyService"
+app_user: "www-data"
+app_group: "www-data"
+app_directory: "/var/www/your-app"
+app_executable: "KejaHUnt_PropertiesAPI"  # Your .NET executable name
+app_port: "5000"
+dotnet_version: "8.0"
+aspnet_environment: "Production"
+
+# Environment variables for your app
+app_env_vars:
+  ConnectionStrings__DefaultConnection: "Server=0.tcp.in.ngrok.io,15222;Database=KejaHUnTdb;User Id=sa;Password=Chepsom-80;TrustServerCertificate=True"
+  # Add more as needed
