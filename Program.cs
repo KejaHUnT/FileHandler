@@ -15,10 +15,9 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(provider =>
     var connectionString = builder.Configuration.GetConnectionString("Redis") ?? "redis:6379";
     return ConnectionMultiplexer.Connect(connectionString);
 });
+builder.Services.AddScoped<ICacheService, CacheService>();
 
 builder.Services.AddScoped<IFileService, FileService>();
-
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
