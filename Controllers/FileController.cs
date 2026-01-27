@@ -32,25 +32,13 @@ namespace FileHandler.Controllers
         [Route("{documentId:Guid}")]
         public async Task<IActionResult> GetFile(Guid documentId)
         {
-            var cacheKey = $"file:{documentId}";
-            
-            // Check cache first
-            var cachedFile = await _cacheService.GetAsync(cacheKey);
-            if (cachedFile != null)
-            {
-                return Ok(cachedFile); // Cache hit
-            }
-            
-            // Cache miss - get from database
             var result = await _fileService.GetFileAsync(documentId);
+
             if (result == null)
                 return NotFound("File not found.");
-                
-            // Store in cache for 1 hour
-            var resultJson = System.Text.Json.JsonSerializer.Serialize(result);
-            await _cacheService.SetAsync(cacheKey, resultJson, TimeSpan.FromHours(1));
 
             return Ok(result);
+
         }
 
         [HttpPut]
