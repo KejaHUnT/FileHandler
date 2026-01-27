@@ -5,7 +5,7 @@ on:
 
 env:
   IMAGE_REPOSITORY: kejahunt
-  IMAGE_TAG: access    
+  IMAGE_TAG: filehandler    
 
 jobs:
   build:
@@ -32,7 +32,7 @@ jobs:
           file: ./Dockerfile
           target: runtime
           push: true
-          tags: kalukwo/kejahunt-filehandler:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_REPOSITORY }}:${{ env.IMAGE_TAG }}
 
       - name: Build and Push Migration Image
         uses: docker/build-push-action@v5
@@ -41,4 +41,4 @@ jobs:
           file: ./Dockerfile
           target: migrations
           push: true
-          tags: kalukwo/kejahunt-filehandler:filehandler-migrations
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_REPOSITORY }}:filehandler-migrations
